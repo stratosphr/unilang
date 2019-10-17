@@ -23,6 +23,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/parser/parser/UnilangBaseVisitor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/parser/parser/UnilangLexer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/parser/parser/UnilangParser.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/parser/parser/UnilangVisitor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/parser/parser/unilangParser.java">
           <value>
             <set />
