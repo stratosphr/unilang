@@ -1,85 +1,41 @@
 grammar Unilang;
 
-IDENTIFIER: ('a'..'z' | 'A'..'Z' | '_')('a'..'z' | 'A'..'Z' | '_' | '0'..'9')+;
-EQ: '=';
-SQB_O: '[';
-SQB_C: ']';
-PAR_O: '(';
-PAR_C: ')';
-COMMA: ',';
-DOT: '.';
+DOUBLE_QUOTE_STRING: UNTERMINATED_DOUBLE_QUOTE_STRING '"';
 PLUS: '+';
-MINUS: '-';
-STAR: '*';
+PRINT: 'print';
+PRINTLN: 'printl' | 'println';
+SIMPLE_QUOTE_STRING: UNTERMINATED_SIMPLE_QUOTE_STRING '\'';
 SLASH: '/';
-VLINE: '|';
-EXCLAMATION: '!';
-INTEGER: ('+' | '-')? '0'..'9'+;
-DOUBLE: INTEGER DOT ('0'..'9')+;
+TIMES: '*';
+UNTERMINATED_DOUBLE_QUOTE_STRING: ('"' (~["\\\r\n] | '\\' (. | EOF))*);
+UNTERMINATED_SIMPLE_QUOTE_STRING: ('\'' (~['\\\r\n] | '\\' (. | EOF))*);
 
 WS: [ \n\t\r]+ -> channel(HIDDEN);
-COMMENT : SLASH STAR .*? STAR SLASH -> skip;
+COMMENT : SLASH TIMES .*? TIMES SLASH -> skip;
 LINE_COMMENT : SLASH SLASH ~[\r\n]* -> skip;
 
+ERROR: .;
+
 start:
-    statement+
+    instrs
     ;
 
-statement:
-    assignment
+instrs:
+    instr*
     ;
 
-assignment:
-    identifier EQ expr |
-    identifier PLUS EQ expr |
-    identifier MINUS EQ expr |
-    identifier STAR EQ num_expr
+instr:
+    instr_print
     ;
 
-identifier:
-    IDENTIFIER |
-    IDENTIFIER SQB_O list_elem SQB_C
+instr_print:
+    PRINT expr |
+    PRINTLN expr
     ;
 
 expr:
-    parenthesis_expr |
-    list_expr |
-    num_expr |
-    ;
-
-parenthesis_expr:
-    PAR_O expr PAR_C
-    ;
-
-list_expr:
-    identifier |
-    SQB_O SQB_C |
-    SQB_O list_elem (COMMA list_elem)* SQB_C |
-    list_expr PLUS list_expr |
-    list_expr MINUS list_expr |
-    list_expr STAR num_expr
-    ;
-
-list_elem:
-    expr |
-    range_expr
-    ;
-
-range_expr:
-    num_expr DOT DOT num_expr
-    ;
-
-num_expr:
-    identifier |
-    r_integer |
-    r_double
-    ;
-
-r_integer:
-    INTEGER
-    ;
-
-r_double:
-    DOUBLE
+    SIMPLE_QUOTE_STRING |
+    DOUBLE_QUOTE_STRING |
+    expr PLUS expr
     ;
 

@@ -1,7 +1,16 @@
 /*
     This file is an example of the unilang syntax.
     This multi-line comment is allowed in unilang files.
+    // Test
 */
+
+print "Hello, World!" // >> "Hello, World!"
+printl "Hello, World!" // >> "Hello, World!\n"
+println "Hello, World!" // >> "Hello, World!\n" // Same as "printl "Hello, World!"
+print "This is a more complicated string with nested '\"' characters in it '\"'."
+print 'This is another way to use strings with non escaped double quotes (") in it.'
+print "You can concatenate strings" + " using the + operator" + ", it's easy"
+print "You can also print any expr: " + -42 - 64 + 128
 
 list = []
 list = [0, 1, 2.4, 3]
