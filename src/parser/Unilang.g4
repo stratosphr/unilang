@@ -25,17 +25,12 @@ instrs:
     ;
 
 instr:
-    instr_print
-    ;
-
-instr_print:
-    PRINT expr |
-    PRINTLN expr
+    PRINT expr #Print |
+    PRINTLN expr #PrintLn
     ;
 
 expr:
-    SIMPLE_QUOTE_STRING |
-    DOUBLE_QUOTE_STRING |
-    expr PLUS expr
+    SIMPLE_QUOTE_STRING #String |
+    DOUBLE_QUOTE_STRING #String |
+    expr (PLUS expr)+ #Plus
     ;
-

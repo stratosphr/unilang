@@ -1,4 +1,4 @@
-package parser.parser.errors;
+package parser.translation.errors;
 
 import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.RecognitionException;
@@ -27,7 +27,6 @@ final class SyntaxError {
         this.charPositionInLine = charPositionInLine;
         this.msg = msg;
         this.e = e;
-        System.err.println(this);
     }
 
     public Recognizer<?, ?> getRecognizer() {

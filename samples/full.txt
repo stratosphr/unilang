@@ -7,10 +7,11 @@
 print "Hello, World!" // >> "Hello, World!"
 printl "Hello, World!" // >> "Hello, World!\n"
 println "Hello, World!" // >> "Hello, World!\n" // Same as "printl "Hello, World!"
-print "This is a more complicated string with nested '\"' characters in it '\"'."
-print 'This is another way to use strings with non escaped double quotes (") in it.'
-print "You can concatenate strings" + " using the + operator" + ", it's easy"
-print "You can also print any expr: " + -42 - 64 + 128
+printl "This is a more complicated string with nested '\"' characters in it '\"'."
+printl 'This is another way to use strings with non escaped double quotes (") in it.'
+printl "You can concatenate strings" + " using the + operator" + ", it's easy"
+printl "You can also print any expr: " + -42 - 64 + 128
+
 
 list = []
 list = [0, 1, 2.4, 3]
@@ -45,6 +46,4 @@ set = {0, 1, 2, 3, 2, 1, 0, 4} // set = {0, 1, 2, 3, 4}
 set = {0, 1, 2, 3} | {0..5, 6, 3} & {2..4} // set = {0, 1, 2, 3, 4, 5, 6} & {2..8} = [2, 3, 4, 5, 6] // computes the union (|) and the intersection (&) between two sets
 
 list = [0, 0, 4]
-print "My list " + list + " is cool!" // >> My list [0, 0, 4] is cool!
-printl "My list " + list + " is cool!" // >> My list [0, 0, 4] is cool!\n
 

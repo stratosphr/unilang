@@ -1,4 +1,4 @@
-package parser.parser.errors;
+package parser.translation.errors;
 
 import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.Parser;
@@ -16,16 +16,16 @@ import java.util.BitSet;
  */
 public final class UnilangErrorListener extends BaseErrorListener {
 
-    private final ArrayList<Object> errors;
+    private final ArrayList<SyntaxError> syntaxErrors;
 
     public UnilangErrorListener() {
-        this.errors = new ArrayList<>();
+        this.syntaxErrors = new ArrayList<>();
     }
 
     @Override
     public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
         super.syntaxError(recognizer, offendingSymbol, line, charPositionInLine, msg, e);
-        errors.add(new SyntaxError(recognizer, offendingSymbol, line, charPositionInLine, msg, e));
+        syntaxErrors.add(new SyntaxError(recognizer, offendingSymbol, line, charPositionInLine, msg, e));
     }
 
     @Override
