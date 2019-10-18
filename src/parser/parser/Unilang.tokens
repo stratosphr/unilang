@@ -1,8 +1,0 @@
-IDENTIFIER=1
-EQ=2
-SQB_O=3
-SQB_C=4
-WS=5
-'='=2
-'['=3
-']'=4
