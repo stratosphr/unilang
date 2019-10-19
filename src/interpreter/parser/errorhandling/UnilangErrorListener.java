@@ -1,4 +1,4 @@
-package parser.translation.errors;
+package interpreter.parser.errorhandling;
 
 import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.Parser;

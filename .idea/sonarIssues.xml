@@ -28,6 +28,31 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/UnilangInterpreter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/UnilangAnalyzer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/AUnilangObject.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/Program.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/parser/UnilangVisitor.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/parser/Unilang.g4">
           <value>
             <set />
