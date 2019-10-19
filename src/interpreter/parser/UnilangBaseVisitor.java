@@ -76,4 +76,15 @@ public class UnilangBaseVisitor<T> extends AbstractParseTreeVisitor<T> implement
     public T visitDoubleQuoteString(UnilangParser.DoubleQuoteStringContext ctx) {
         return visitChildren(ctx);
     }
+
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation returns the result of calling
+     * {@link #visitChildren} on {@code ctx}.</p>
+     */
+    @Override
+    public T visitPlus(UnilangParser.PlusContext ctx) {
+        return visitChildren(ctx);
+    }
 }

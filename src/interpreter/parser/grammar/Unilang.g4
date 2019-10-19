@@ -31,5 +31,6 @@ instr:
 
 expr:
     SIMPLE_QUOTE_STRING #SimpleQuoteString |
-    DOUBLE_QUOTE_STRING #DoubleQuoteString
+    DOUBLE_QUOTE_STRING #DoubleQuoteString |
+    expr (PLUS expr)+ #Plus
     ;

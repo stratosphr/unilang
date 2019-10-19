@@ -61,4 +61,13 @@ public interface UnilangVisitor<T> extends ParseTreeVisitor<T> {
      * @return the visitor result
      */
     T visitDoubleQuoteString(UnilangParser.DoubleQuoteStringContext ctx);
+
+    /**
+     * Visit a parse tree produced by the {@code Plus}
+     * labeled alternative in {@link UnilangParser#expr}.
+     *
+     * @param ctx the parse tree
+     * @return the visitor result
+     */
+    T visitPlus(UnilangParser.PlusContext ctx);
 }

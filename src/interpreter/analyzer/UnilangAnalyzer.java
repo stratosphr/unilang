@@ -63,4 +63,9 @@ public final class UnilangAnalyzer extends UnilangBaseVisitor<AObject> {
         return new String(string.substring(1, string.length() - 1));
     }
 
+    @Override
+    public AObject visitPlus(UnilangParser.PlusContext ctx) {
+        return ctx.expr().stream().map(exprContext -> (AExpr) exprContext.accept(this)).reduce(AExpr::plus).orElseThrow();
+    }
+
 }

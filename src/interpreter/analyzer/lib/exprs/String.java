@@ -28,4 +28,9 @@ public final class String extends AExpr {
         return new String(toString() + expr);
     }
 
+    @Override
+    public java.lang.String toString() {
+        return getString();
+    }
+
 }

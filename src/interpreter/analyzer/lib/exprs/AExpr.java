@@ -10,4 +10,7 @@ public abstract class AExpr extends AObject {
 
     public abstract AExpr plus(AExpr expr);
 
+    @Override
+    public abstract java.lang.String toString();
+
 }
