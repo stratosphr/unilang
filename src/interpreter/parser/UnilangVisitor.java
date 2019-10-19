@@ -1,6 +1,5 @@
 // Generated from /home/gvoiron/IdeaProjects/unilang/src/interpreter/parser/grammar/Unilang.g4 by ANTLR 4.7.2
 package interpreter.parser;
-
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -8,16 +7,16 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  * by {@link UnilangParser}.
  *
  * @param <T> The return type of the visit operation. Use {@link Void} for
- *            operations with no return type.
+ * operations with no return type.
  */
 public interface UnilangVisitor<T> extends ParseTreeVisitor<T> {
     /**
-     * Visit a parse tree produced by {@link UnilangParser#start}.
+     * Visit a parse tree produced by {@link UnilangParser#program}.
      *
      * @param ctx the parse tree
      * @return the visitor result
      */
-    T visitStart(UnilangParser.StartContext ctx);
+    T visitProgram(UnilangParser.ProgramContext ctx);
 
     /**
      * Visit a parse tree produced by {@link UnilangParser#instrs}.
@@ -46,20 +45,20 @@ public interface UnilangVisitor<T> extends ParseTreeVisitor<T> {
     T visitPrintLn(UnilangParser.PrintLnContext ctx);
 
     /**
-     * Visit a parse tree produced by the {@code String}
+     * Visit a parse tree produced by the {@code SimpleQuoteString}
      * labeled alternative in {@link UnilangParser#expr}.
      *
      * @param ctx the parse tree
      * @return the visitor result
      */
-    T visitString(UnilangParser.StringContext ctx);
+    T visitSimpleQuoteString(UnilangParser.SimpleQuoteStringContext ctx);
 
     /**
-     * Visit a parse tree produced by the {@code Plus}
+     * Visit a parse tree produced by the {@code DoubleQuoteString}
      * labeled alternative in {@link UnilangParser#expr}.
      *
      * @param ctx the parse tree
      * @return the visitor result
      */
-    T visitPlus(UnilangParser.PlusContext ctx);
+    T visitDoubleQuoteString(UnilangParser.DoubleQuoteStringContext ctx);
 }

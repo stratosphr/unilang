@@ -4,12 +4,12 @@
     // Test
 */
 
-print "Hello, World!" // >> "Hello, World!"
-printl "Hello, World!" // >> "Hello, World!\n"
+print "Hello" // >> "Hello"
+printl ", World!" // >> "Hello, World!\n"
 println "Hello, World!" // >> "Hello, World!\n" // Same as "printl "Hello, World!"
 printl "This is a more complicated string with nested '\"' characters in it '\"'."
 printl 'This is another way to use strings with non escaped double quotes (") in it.'
-printl "You can concatenate strings" + " using the + operator" + ", it's easy"
+printl "You can concatenate strings" + " using the + operator" + ", it's easy..."
 printl "You can also print any expr: " + -42 - 64 + 128
 
 

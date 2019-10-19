@@ -16,7 +16,7 @@ LINE_COMMENT : SLASH SLASH ~[\r\n]* -> skip;
 
 ERROR: .;
 
-start:
+program:
     instrs
     ;
 
@@ -30,7 +30,6 @@ instr:
     ;
 
 expr:
-    SIMPLE_QUOTE_STRING #String |
-    DOUBLE_QUOTE_STRING #String |
-    expr (PLUS expr)+ #Plus
+    SIMPLE_QUOTE_STRING #SimpleQuoteString |
+    DOUBLE_QUOTE_STRING #DoubleQuoteString
     ;

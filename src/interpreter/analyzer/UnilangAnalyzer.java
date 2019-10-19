@@ -1,16 +1,21 @@
 package interpreter.analyzer;
 
-import interpreter.analyzer.lib.AUnilangObject;
+import interpreter.analyzer.lib.AObject;
 import interpreter.analyzer.lib.Program;
+import interpreter.analyzer.lib.exprs.AExpr;
+import interpreter.analyzer.lib.exprs.String;
+import interpreter.analyzer.lib.instrs.AInstr;
+import interpreter.analyzer.lib.instrs.Print;
+import interpreter.analyzer.lib.instrs.PrintLn;
 import interpreter.parser.UnilangBaseVisitor;
+import interpreter.parser.UnilangParser;
 import interpreter.parser.errorhandling.UnilangErrorListener;
-import org.antlr.v4.runtime.tree.ParseTree;
 
 /**
  * Created by gvoiron on 19/10/19.
  * Time : 08:19
  */
-public final class UnilangAnalyzer extends UnilangBaseVisitor<AUnilangObject> {
+public final class UnilangAnalyzer extends UnilangBaseVisitor<AObject> {
 
     private final UnilangErrorListener errorListener;
     private final Program program;
@@ -20,9 +25,42 @@ public final class UnilangAnalyzer extends UnilangBaseVisitor<AUnilangObject> {
         this.program = new Program();
     }
 
-    public Program analyze(ParseTree ast) {
-        ast.accept(this);
-        return this.program;
+    public Program analyze(UnilangParser parser) {
+        return (Program) parser.program().accept(this);
+    }
+
+    @Override
+    public Program visitProgram(UnilangParser.ProgramContext ctx) {
+        ctx.instrs().accept(this);
+        return program;
+    }
+
+    @Override
+    public AObject visitInstrs(UnilangParser.InstrsContext ctx) {
+        ctx.instr().forEach(instrContext -> program.addInstr((AInstr) instrContext.accept(this)));
+        return null;
+    }
+
+    @Override
+    public AObject visitPrint(UnilangParser.PrintContext ctx) {
+        return new Print((AExpr) ctx.expr().accept(this));
+    }
+
+    @Override
+    public AObject visitPrintLn(UnilangParser.PrintLnContext ctx) {
+        return new PrintLn((AExpr) ctx.expr().accept(this));
+    }
+
+    @Override
+    public AObject visitDoubleQuoteString(UnilangParser.DoubleQuoteStringContext ctx) {
+        java.lang.String string = ctx.DOUBLE_QUOTE_STRING().getText();
+        return new String(string.substring(1, string.length() - 1));
+    }
+
+    @Override
+    public AObject visitSimpleQuoteString(UnilangParser.SimpleQuoteStringContext ctx) {
+        java.lang.String string = ctx.SIMPLE_QUOTE_STRING().getText();
+        return new String(string.substring(1, string.length() - 1));
     }
 
 }

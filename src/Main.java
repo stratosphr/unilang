@@ -7,7 +7,6 @@ import interpreter.parser.errorhandling.UnilangErrorListener;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.io.IOException;
 
@@ -26,8 +25,7 @@ public class Main {
             UnilangParser parser = new UnilangParser(tokens);
             parser.removeErrorListeners();
             parser.addErrorListener(unilangErrorListener);
-            ParseTree ast = parser.start();
-            Program program = unilangAnalyzer.analyze(ast);
+            Program program = unilangAnalyzer.analyze(parser);
             unilangInterpreter.interpret(program);
         } catch (IOException e) {
             e.printStackTrace();

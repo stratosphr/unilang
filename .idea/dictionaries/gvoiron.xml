@@ -2,6 +2,7 @@
   <dictionary name="gvoiron">
     <words>
       <w>exprs</w>
+      <w>instrs</w>
       <w>printl</w>
       <w>unilang</w>
     </words>
