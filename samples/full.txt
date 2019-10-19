@@ -10,7 +10,8 @@ println "Hello, World!" // >> "Hello, World!\n" // Same as "printl "Hello, World
 printl "This is a more complicated string with nested '\"' characters in it '\"'."
 printl 'This is another way to use strings with non escaped double quotes (") in it.'
 printl "You can concatenate strings" + " using the + operator" + ", it's easy..."
-printl "You can also print any expr: " + -42 - 64 + 128
+printl "You can print any positive integer: " + 42
+printl "As well as any other expr: " + - 42 - 64 + 128
 
 
 list = []

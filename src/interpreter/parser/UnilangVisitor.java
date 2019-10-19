@@ -45,22 +45,22 @@ public interface UnilangVisitor<T> extends ParseTreeVisitor<T> {
     T visitPrintLn(UnilangParser.PrintLnContext ctx);
 
     /**
-     * Visit a parse tree produced by the {@code SimpleQuoteString}
+     * Visit a parse tree produced by the {@code Integer}
      * labeled alternative in {@link UnilangParser#expr}.
      *
      * @param ctx the parse tree
      * @return the visitor result
      */
-    T visitSimpleQuoteString(UnilangParser.SimpleQuoteStringContext ctx);
+    T visitInteger(UnilangParser.IntegerContext ctx);
 
     /**
-     * Visit a parse tree produced by the {@code DoubleQuoteString}
+     * Visit a parse tree produced by the {@code String}
      * labeled alternative in {@link UnilangParser#expr}.
      *
      * @param ctx the parse tree
      * @return the visitor result
      */
-    T visitDoubleQuoteString(UnilangParser.DoubleQuoteStringContext ctx);
+    T visitString(UnilangParser.StringContext ctx);
 
     /**
      * Visit a parse tree produced by the {@code Plus}

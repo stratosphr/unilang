@@ -78,6 +78,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/ANumber.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/Integer.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/String.java">
           <value>
             <set />
@@ -114,6 +124,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/interpreter/parser/UnilangBaseListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/parser/UnilangBaseVisitor.java">
           <value>
             <set />
           </value>

@@ -29,6 +29,11 @@ public final class String extends AExpr {
     }
 
     @Override
+    public AExpr minus(AExpr expr) {
+        throw new Error("Invalid use of operator '-' between " + getClass().getSimpleName() + " and " + expr.getClass().getSimpleName() + ".");
+    }
+
+    @Override
     public java.lang.String toString() {
         return getString();
     }

@@ -1,6 +1,8 @@
 grammar Unilang;
 
 DOUBLE_QUOTE_STRING: UNTERMINATED_DOUBLE_QUOTE_STRING '"';
+INTEGER: ('0' | '1'..'9'('0'..'9')*);
+MINUS: '-';
 PLUS: '+';
 PRINT: 'print';
 PRINTLN: 'printl' | 'println';
@@ -17,11 +19,11 @@ LINE_COMMENT : SLASH SLASH ~[\r\n]* -> skip;
 ERROR: .;
 
 program:
-    instrs
+    instrs?
     ;
 
 instrs:
-    instr*
+    instr+
     ;
 
 instr:
@@ -30,7 +32,8 @@ instr:
     ;
 
 expr:
-    SIMPLE_QUOTE_STRING #SimpleQuoteString |
-    DOUBLE_QUOTE_STRING #DoubleQuoteString |
+    SIMPLE_QUOTE_STRING #String |
+    DOUBLE_QUOTE_STRING #String |
+    INTEGER #Integer |
     expr (PLUS expr)+ #Plus
     ;

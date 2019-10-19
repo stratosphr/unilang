@@ -3,6 +3,7 @@ package interpreter.analyzer;
 import interpreter.analyzer.lib.AObject;
 import interpreter.analyzer.lib.Program;
 import interpreter.analyzer.lib.exprs.AExpr;
+import interpreter.analyzer.lib.exprs.Integer;
 import interpreter.analyzer.lib.exprs.String;
 import interpreter.analyzer.lib.instrs.AInstr;
 import interpreter.analyzer.lib.instrs.Print;
@@ -52,20 +53,18 @@ public final class UnilangAnalyzer extends UnilangBaseVisitor<AObject> {
     }
 
     @Override
-    public AObject visitDoubleQuoteString(UnilangParser.DoubleQuoteStringContext ctx) {
-        java.lang.String string = ctx.DOUBLE_QUOTE_STRING().getText();
-        return new String(string.substring(1, string.length() - 1));
-    }
-
-    @Override
-    public AObject visitSimpleQuoteString(UnilangParser.SimpleQuoteStringContext ctx) {
-        java.lang.String string = ctx.SIMPLE_QUOTE_STRING().getText();
-        return new String(string.substring(1, string.length() - 1));
+    public AObject visitString(UnilangParser.StringContext ctx) {
+        return new String(ctx.getText().substring(1, ctx.getText().length() - 1));
     }
 
     @Override
     public AObject visitPlus(UnilangParser.PlusContext ctx) {
         return ctx.expr().stream().map(exprContext -> (AExpr) exprContext.accept(this)).reduce(AExpr::plus).orElseThrow();
+    }
+
+    @Override
+    public AObject visitInteger(UnilangParser.IntegerContext ctx) {
+        return new Integer(java.lang.Integer.parseInt(ctx.getText()));
     }
 
 }

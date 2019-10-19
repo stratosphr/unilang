@@ -1,6 +1,7 @@
 package interpreter;
 
 import interpreter.analyzer.lib.Program;
+import interpreter.analyzer.lib.exprs.Integer;
 import interpreter.analyzer.lib.exprs.String;
 import interpreter.analyzer.lib.instrs.Print;
 import interpreter.analyzer.lib.instrs.PrintLn;
@@ -18,5 +19,7 @@ public interface IInterpreter {
     Object visit(PrintLn printLn);
 
     Object visit(String string);
+
+    Object visit(Integer integer);
 
 }
