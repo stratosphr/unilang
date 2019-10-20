@@ -27,6 +27,7 @@ public class Main {
             parser.addErrorListener(unilangErrorListener);
             Program program = unilangAnalyzer.analyze(parser);
             unilangInterpreter.interpret(program);
+            System.out.println("And if you try that: " + 64 + 10 + " this won't compute 64 + 10 but concatenate strings!");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -4,15 +4,17 @@
     // Test
 */
 
-print "Hello" // >> "Hello"
-printl ", World!" // >> "Hello, World!\n"
-println "Hello, World!" // >> "Hello, World!\n" // Same as "printl "Hello, World!"
+print "Hello" // >> Hello
+printl ", World!" // >> Hello, World!\n
+println "Hello, World!" // >> Hello, World!\n // Same as printl "Hello, World!"
 printl "This is a more complicated string with nested '\"' characters in it '\"'."
 printl 'This is another way to use strings with non escaped double quotes (") in it.'
 printl "You can concatenate strings" + " using the + operator" + ", it's easy..."
 printl "You can print any positive integer: " + 42
-printl "As well as any other expr: " + - 42 - 64 + 128
-
+printl "As well as any other expr: " + (- 42 - 64 + 128) // >> As well as any other expr: 22\n
+printl "Careful with this: " + - 42 - 64 + 128 // >> Careful with this: -42-64128\n
+printl 11 + -42 + 10 + " also works!" // >> -21 also works!\n
+printl "And if you try that: " + 64 + 10 + " this won't compute 64 + 10 but concatenate strings!"
 
 list = []
 list = [0, 1, 2.4, 3]
@@ -40,6 +42,7 @@ list = list<~> // shuffles the list
 list = [|list|..0, 4, 5] // list = [7..0, 4, 5] = [7, 6, 5, 4, 3, 2, 1, 0, 4, 5] // |list| gives the size of the list
 list = [0, 1, 2, 3] * [3..0] // list = [0, 1, 2, 3] * [3, 2, 1, 0] = [(0, 3), ..., (0, 0), (1, 3), ..., (1, 0), (2, 3), ..., (2, 0), (3, 3), ..., (3, 0)] // computes the cartesian product
 list = [(a, b) in list | a <= 1 && b > 2] // list = [(0, 3), (1, 3)]
+list = [0, 1] ^ 3 // list = [0, 1] * [0, 1] * [0, 1] = [(0, 0, 0), (0, 0, 1), ..., (1, 1, 1)]
 
 list[4] = list[1][1] * list[0][0] // list = [(0, 3), (1, 3), null, null, 3 * 0] = [(0, 3), (1, 3), null, null, 0]
 
