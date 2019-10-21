@@ -16,4 +16,9 @@ public abstract class ANumber<T extends Number> extends AExpr {
         return value;
     }
 
+    @Override
+    public java.lang.String toString() {
+        return getValue().toString();
+    }
+
 }

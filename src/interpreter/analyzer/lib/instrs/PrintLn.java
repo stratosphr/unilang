@@ -18,4 +18,9 @@ public final class PrintLn extends APrint {
         return interpreter.visit(this);
     }
 
+    @Override
+    public String toString() {
+        return "println " + getExpr();
+    }
+
 }

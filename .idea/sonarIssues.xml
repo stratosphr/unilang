@@ -78,6 +78,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/ABinOp.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/ACollection.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/AExpr.java">
           <value>
             <set />
@@ -88,12 +98,57 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/Double.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/EOp.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/False.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/Integer.java">
           <value>
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/List.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/Minus.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/Plus.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/Set.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/String.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/True.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/interpreter/analyzer/lib/exprs/Var.java">
           <value>
             <set />
           </value>

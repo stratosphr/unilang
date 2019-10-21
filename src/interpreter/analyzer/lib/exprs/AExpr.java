@@ -8,11 +8,4 @@ import interpreter.analyzer.lib.AObject;
  */
 public abstract class AExpr extends AObject {
 
-    public abstract AExpr plus(AExpr expr);
-
-    public abstract AExpr minus(AExpr expr);
-
-    @Override
-    public abstract java.lang.String toString();
-
 }

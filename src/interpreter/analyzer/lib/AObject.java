@@ -7,4 +7,8 @@ import interpreter.IInterpretable;
  * Time : 08:21
  */
 public abstract class AObject implements IInterpretable {
+
+    @Override
+    public abstract java.lang.String toString();
+
 }

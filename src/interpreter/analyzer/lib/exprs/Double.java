@@ -3,18 +3,18 @@ package interpreter.analyzer.lib.exprs;
 import interpreter.IInterpreter;
 
 /**
- * Created by gvoiron on 19/10/19.
- * Time : 22:57
+ * Created by gvoiron on 21/10/2019.
+ * Time : 22:13
  */
-public final class Integer extends ANumber<java.lang.Integer> {
+public class Double extends ANumber<java.lang.Double> {
 
-    public Integer(int value) {
+    public Double(double value) {
         super(value);
     }
 
     @Override
     public Object accept(IInterpreter interpreter) {
-        return interpreter.visit(this);
+        return null;
     }
 
 }

@@ -11,10 +11,14 @@ printl "This is a more complicated string with nested '\"' characters in it '\"'
 printl 'This is another way to use strings with non escaped double quotes (") in it.'
 printl "You can concatenate strings" + " using the + operator" + ", it's easy..."
 printl "You can print any positive integer: " + 42
-printl "As well as any other expr: " + (- 42 - 64 + 128) // >> As well as any other expr: 22\n
+printl "As well as any other expr: " + (42 - 64 + 128) // >> As well as any other expr: 22\n
 printl "Careful with this: " + - 42 - 64 + 128 // >> Careful with this: -42-64128\n
 printl 11 + -42 + 10 + " also works!" // >> -21 also works!\n
 printl "And if you try that: " + 64 + 10 + " this won't compute 64 + 10 but concatenate strings!"
+print false
+print true
+print identifier
+print (false && true)
 
 /* Yet another comment randomly placed in the code */
 /*

@@ -4,6 +4,7 @@ import interpreter.IInterpreter;
 import interpreter.analyzer.lib.instrs.AInstr;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Created by gvoiron on 19/10/19.
@@ -28,6 +29,11 @@ public final class Program extends AObject {
     @Override
     public Object accept(IInterpreter interpreter) {
         return interpreter.visit(this);
+    }
+
+    @Override
+    public String toString() {
+        return instrs.stream().map(AObject::toString).collect(Collectors.joining("\n"));
     }
 
 }

@@ -76,11 +76,11 @@ instr:
 expr:
     FALSE #False |
     TRUE #True |
-    IDENTIFIER #Identifier |
-    SIMPLE_QUOTE_STRING #String |
-    DOUBLE_QUOTE_STRING #String |
     INTEGER #Integer |
     DOUBLE #Double |
+    SIMPLE_QUOTE_STRING #String |
+    DOUBLE_QUOTE_STRING #String |
+    IDENTIFIER #Identifier |
     O_PAR expr C_PAR #Parenthesis |
     O_BRA C_BRA #EmptyList |
     O_CUR C_CUR #EmptySet |

@@ -17,7 +17,7 @@ public class Main {
             UnilangAnalyzer unilangAnalyzer = new UnilangAnalyzer(new UnilangErrorListener());
             UnilangInterpreter unilangInterpreter = new UnilangInterpreter();
             UnilangErrorListener unilangErrorListener = new UnilangErrorListener();
-            CharStream file = CharStreams.fromFileName("/home/gvoiron/IdeaProjects/unilang/samples/full.txt");
+            CharStream file = CharStreams.fromFileName("/home/gvoiron/IdeaProjects/unilang/samples/test.txt");
             UnilangLexer lexer = new UnilangLexer(file);
             lexer.removeErrorListeners();
             lexer.addErrorListener(unilangErrorListener);

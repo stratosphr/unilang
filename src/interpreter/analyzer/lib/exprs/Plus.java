@@ -3,13 +3,13 @@ package interpreter.analyzer.lib.exprs;
 import interpreter.IInterpreter;
 
 /**
- * Created by gvoiron on 19/10/19.
- * Time : 22:57
+ * Created by gvoiron on 21/10/2019.
+ * Time : 22:54
  */
-public final class Integer extends ANumber<java.lang.Integer> {
+public final class Plus extends ABinOp {
 
-    public Integer(int value) {
-        super(value);
+    public Plus(AExpr left, AExpr right) {
+        super(EOp.PLUS, left, right);
     }
 
     @Override
