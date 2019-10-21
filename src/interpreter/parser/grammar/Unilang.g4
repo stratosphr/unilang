@@ -84,11 +84,12 @@ expr:
     O_PAR expr C_PAR #Parenthesis |
     O_BRA C_BRA #EmptyList |
     O_CUR C_CUR #EmptySet |
+    O_PAR expr (COMMA expr)+ C_PAR #Tuple |
     O_BRA (expr | range) (COMMA (expr | range))* C_BRA #List |
     O_CUR (expr | range) (COMMA (expr | range))* C_CUR #Set |
-    SHARP expr #Length |
     <assoc=right> op=(REVERSE | SHUFFLE) expr #UCombined |
     expr op=(DOT | ARROW_LEFT | ARROW_RIGHT) expr #Combined |
+    SHARP expr #Length |
     <assoc=right> op=(PLUS | MINUS | NOT | BINARY_NOT) expr #UPlusMinusNotBinaryNot |
     <assoc=right> expr POWER expr #Power |
     expr op=(TIMES | DIV | MOD) expr #TimesDivMod |
